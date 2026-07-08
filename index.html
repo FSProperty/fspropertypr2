@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FS Property Solutions | Puerto Rico</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
         .hero-bg {
-            /* Placeholder for the Father & Son Palmas Del Mar image */
-            background: linear-gradient(rgba(0, 31, 63, 0.7), rgba(0, 31, 63, 0.7)), url('hero-bg.jpg') center/cover;
+            /* Restored placeholder background image */
+            background: linear-gradient(rgba(0, 31, 63, 0.7), rgba(0, 31, 63, 0.7)), url('https://images.unsplash.com/photo-1613490901591-8ac149eb05b7?auto=format&fit=crop&w=1920&q=80') center/cover;
         }
         .accordion-content { display: none; }
         .accordion-content.active { display: block; }
@@ -18,6 +20,7 @@
 </head>
 <body class="font-sans text-gray-800 antialiased bg-gray-50">
 
+    <!-- Top Bar -->
     <div class="bg-blue-900 text-white text-sm py-2 px-4 flex flex-col md:flex-row justify-between items-center z-50 relative">
         <div class="mb-2 md:mb-0">
             <a href="mailto:request@fspropertypr.com" class="hover:text-blue-300 transition duration-300">
@@ -35,6 +38,7 @@
         </div>
     </div>
 
+    <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
@@ -53,6 +57,7 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero-bg h-[600px] flex items-center justify-center text-center px-4">
         <div class="max-w-4xl text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Hassle-Free Property Management in Puerto Rico</h1>
@@ -61,6 +66,7 @@
                 <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded shadow-lg transition">Free Up Your Hands Today</a>
             </div>
             
+            <!-- Special Offers Banner -->
             <div class="mt-12 flex flex-col sm:flex-row justify-center gap-4">
                 <div class="bg-yellow-500 text-blue-900 font-bold py-2 px-6 rounded-full shadow flex items-center justify-center">
                     <i class="fas fa-hand-holding-heart mr-2"></i> Seniors in Need Special Discounts
@@ -72,6 +78,7 @@
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-12 items-center">
             <div class="md:w-1/2">
@@ -86,12 +93,14 @@
                     Coupled with our active <strong>General Contractor license</strong>, our extensive knowledge in building, repairs, and legal protection means we don't just manage your property—we safeguard and elevate your investment.
                 </p>
             </div>
-            <div class="md:w-1/2 bg-gray-200 rounded-lg h-80 flex items-center justify-center shadow-inner">
-                <p class="text-gray-500 italic">[ Insert Photo: Father & Son at a site in Palmas Del Mar ]</p>
+            <!-- Replaced Placeholder with Father & Son Image -->
+            <div class="md:w-1/2">
+                <img src="father-son.jpg" alt="Father and Son in Palmas Del Mar" class="w-full h-96 object-cover rounded-xl shadow-xl border-4 border-gray-100" onerror="this.src='https://via.placeholder.com/800x600?text=Please+save+image+as+father-son.jpg'">
             </div>
         </div>
     </section>
 
+    <!-- Airbnb Superhost Section -->
     <section id="airbnb" class="py-20 bg-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <i class="fab fa-airbnb text-6xl text-red-500 mb-4"></i>
@@ -107,11 +116,13 @@
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Our Comprehensive Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
+                <!-- Property Management -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-blue-600">
                     <i class="fas fa-building text-3xl text-blue-600 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">Property Management</h3>
@@ -123,6 +134,7 @@
                     </ul>
                 </div>
 
+                <!-- Cleaning Services -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-blue-600">
                     <i class="fas fa-broom text-3xl text-blue-600 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">Cleaning Services</h3>
@@ -135,6 +147,7 @@
                     </ul>
                 </div>
 
+                <!-- Maintenance & Labor -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-blue-600">
                     <i class="fas fa-tools text-3xl text-blue-600 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">Maintenance & Labor</h3>
@@ -147,6 +160,7 @@
                     </ul>
                 </div>
 
+                <!-- Risk Management -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-md border-t-4 border-blue-600">
                     <i class="fas fa-shield-alt text-3xl text-blue-600 mb-4"></i>
                     <h3 class="text-xl font-bold mb-4">Risk Management</h3>
@@ -161,31 +175,35 @@
         </div>
     </section>
 
+    <!-- Properties & Testimonials -->
     <section id="testimonials" class="py-20 bg-gray-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12">Featured Properties & 5-Star Reviews</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Property 1 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700">
-                    <img src="fsprop0001.png" alt="Beach Village Palmas Del Mar 1" class="w-full h-48 object-cover bg-gray-700" onerror="this.src='https://via.placeholder.com/400x300?text=fsprop0001.png'">
+                    <img src="fsprop0001.png" alt="Beach House Palmas Del Mar 1" class="w-full h-48 object-cover bg-gray-700" onerror="this.src='https://via.placeholder.com/400x300?text=fsprop0001.png'">
                     <div class="p-4">
-                        <h4 class="font-bold text-lg mb-2 text-blue-300">Beach Village, Palmas Del Mar</h4>
+                        <h4 class="font-bold text-lg mb-2 text-blue-300">Beach House, Palmas Del Mar</h4>
                         <div class="mb-3 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="text-sm text-gray-300 italic mb-2">"FS Property made our listing completely stress-free. Our bookings have doubled!" - Owner</p>
                         <p class="text-sm text-gray-300 italic">"Spotless, cozy, and perfect communication. A true 5-star stay." - Guest</p>
                     </div>
                 </div>
                 
+                <!-- Property 2 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700">
-                    <img src="fsprop0002.png" alt="Beach Village Palmas Del Mar 2" class="w-full h-48 object-cover bg-gray-700" onerror="this.src='https://via.placeholder.com/400x300?text=fsprop0002.png'">
+                    <img src="fsprop0002.png" alt="Beach House Palmas Del Mar 2" class="w-full h-48 object-cover bg-gray-700" onerror="this.src='https://via.placeholder.com/400x300?text=fsprop0002.png'">
                     <div class="p-4">
-                        <h4 class="font-bold text-lg mb-2 text-blue-300">Beach Village, Palmas Del Mar</h4>
+                        <h4 class="font-bold text-lg mb-2 text-blue-300">Beach House, Palmas Del Mar</h4>
                         <div class="mb-3 text-yellow-400 text-sm"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                         <p class="text-sm text-gray-300 italic mb-2">"They brought a glamour atmosphere to an otherwise plain apartment." - Owner</p>
                         <p class="text-sm text-gray-300 italic">"Check-in was seamless, and the property was immaculate." - Guest</p>
                     </div>
                 </div>
 
+                <!-- Property 3 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700">
                     <img src="fsprop0003.png" alt="Harbour Lakes Retreat" class="w-full h-48 object-cover bg-gray-700" onerror="this.src='https://via.placeholder.com/400x300?text=fsprop0003.png'">
                     <div class="p-4">
@@ -196,6 +214,7 @@
                     </div>
                 </div>
 
+                <!-- Property 4 -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg border border-gray-700">
                     <img src="fsprop0004.png" alt="Humacao Coastal Condo" class="w-full h-48 object-cover bg-gray-700" onerror="this.src='https://via.placeholder.com/400x300?text=fsprop0004.png'">
                     <div class="p-4">
@@ -209,11 +228,13 @@
         </div>
     </section>
 
+    <!-- Policies Section -->
     <section id="policies" class="py-20 bg-gray-100">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Our Contract & Service Policies</h2>
             
             <div class="space-y-6">
+                <!-- PM Policy -->
                 <div class="bg-white p-6 rounded shadow">
                     <h3 class="text-xl font-bold text-gray-800 mb-3"><i class="fas fa-file-contract text-blue-600 mr-2"></i> Property Management Contract Policy</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
@@ -223,6 +244,7 @@
                     </p>
                 </div>
 
+                <!-- Labor Policy -->
                 <div class="bg-white p-6 rounded shadow">
                     <h3 class="text-xl font-bold text-gray-800 mb-3"><i class="fas fa-hard-hat text-blue-600 mr-2"></i> Labor Services & Projects Policy</h3>
                     <p class="text-gray-600 text-sm leading-relaxed">
@@ -233,6 +255,7 @@
         </div>
     </section>
 
+    <!-- Location Search Questionnaire -->
     <section class="py-20 bg-blue-600 text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-6">Looking for a Property or Investment?</h2>
@@ -263,11 +286,13 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
     <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-blue-900 text-center mb-12">Frequently Asked Questions</h2>
             
             <div class="space-y-4">
+                <!-- FAQ 1 -->
                 <div class="border rounded-lg">
                     <button class="w-full text-left px-6 py-4 font-bold text-lg focus:outline-none flex justify-between items-center text-gray-800 faq-toggle">
                         What services do you offer?
@@ -278,6 +303,7 @@
                     </div>
                 </div>
                 
+                <!-- FAQ 2 -->
                 <div class="border rounded-lg">
                     <button class="w-full text-left px-6 py-4 font-bold text-lg focus:outline-none flex justify-between items-center text-gray-800 faq-toggle">
                         How do I get started?
@@ -288,6 +314,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 3 -->
                 <div class="border rounded-lg">
                     <button class="w-full text-left px-6 py-4 font-bold text-lg focus:outline-none flex justify-between items-center text-gray-800 faq-toggle">
                         What makes you different?
@@ -298,6 +325,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 4 -->
                 <div class="border rounded-lg">
                     <button class="w-full text-left px-6 py-4 font-bold text-lg focus:outline-none flex justify-between items-center text-gray-800 faq-toggle">
                         How can I contact you?
@@ -308,6 +336,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 5 -->
                 <div class="border rounded-lg">
                     <button class="w-full text-left px-6 py-4 font-bold text-lg focus:outline-none flex justify-between items-center text-gray-800 faq-toggle">
                         What's your pricing model?
@@ -318,6 +347,7 @@
                     </div>
                 </div>
 
+                <!-- FAQ 6 -->
                 <div class="border rounded-lg">
                     <button class="w-full text-left px-6 py-4 font-bold text-lg focus:outline-none flex justify-between items-center text-gray-800 faq-toggle">
                         What's it like to work with you?
@@ -331,17 +361,22 @@
         </div>
     </section>
 
+    <!-- Contact Form Section -->
     <section id="contact" class="py-20 bg-gray-100">
         <div class="max-w-3xl mx-auto px-4">
             <div class="bg-white rounded-xl shadow-xl p-8">
                 <h2 class="text-3xl font-bold text-blue-900 text-center mb-8">Request Our Services</h2>
                 
+                <!-- Action set to mailto/form processor -->
                 <form action="https://formsubmit.co/request@fspropertypr.com" method="POST" class="space-y-6">
                     
+                    <!-- Anti-Spam Honeypot Field -->
                     <input type="text" name="_honey" style="display:none">
                     
+                    <!-- Hidden field to specify subject -->
                     <input type="hidden" name="_subject" value="New Service Request from FS Property PR">
 
+                    <!-- Profile Type Options -->
                     <div class="flex justify-center space-x-6 mb-6">
                         <label class="flex items-center space-x-2 cursor-pointer">
                             <input type="radio" name="Profile" value="Rental Owner" required class="form-radio text-blue-600">
@@ -401,6 +436,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-300 py-12 text-center text-sm">
         <div class="max-w-5xl mx-auto px-4">
             <p class="mb-4 leading-relaxed font-semibold text-gray-100">
@@ -420,6 +456,7 @@
         </div>
     </footer>
 
+    <!-- Interactive Scripts -->
     <script>
         // FAQ Accordion Logic
         document.querySelectorAll('.faq-toggle').forEach(button => {
