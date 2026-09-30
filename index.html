@@ -301,28 +301,72 @@
             <h2 class="text-3xl font-bold mb-6">Looking for a Property or Investment?</h2>
             <p class="mb-8">Fill out our quick questionnaire to let us know exactly what you are searching for, and our Real Estate Search team will find the perfect match.</p>
             
-            <form class="bg-white text-gray-800 p-8 rounded-lg shadow-xl text-left max-w-2xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-bold mb-2">Desired Location</label>
-                        <input type="text" class="w-full border p-2 rounded" placeholder="e.g. Palmas Del Mar, Humacao">
+            <form id="property-search-form" action="https://api.web3forms.com/submit" method="POST" class="w3f-form bg-white text-gray-800 p-8 rounded-lg shadow-xl text-left max-w-2xl mx-auto space-y-6" novalidate>
+                    <!-- Web3Forms settings (same inbox as the service form: francis@fspropertypr.com) -->
+                    <input type="hidden" name="access_key" value="a1621e12-77e3-4dc6-aaae-b827f58d0459">
+                    <input type="hidden" name="subject" value="New Property Search Request from FS Property PR">
+                    <input type="hidden" name="from_name" value="FS Property PR Website">
+                    <input type="hidden" name="Form" value="Property / Investment Search">
+                    <input type="hidden" name="redirect" value="https://fspropertypr.com/thank-you.html">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Desired Location</label>
+                            <input type="text" name="Desired Location" required maxlength="100" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500" placeholder="e.g. Palmas Del Mar, Humacao">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Property Type</label>
+                            <select name="Property Type" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500 bg-white">
+                                <option>Short Term Rental</option>
+                                <option>Long Term Rental</option>
+                                <option>Commercial Space</option>
+                                <option>Purchase/Investment</option>
+                            </select>
+                        </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-bold mb-2">Property Type</label>
-                        <select class="w-full border p-2 rounded">
-                            <option>Short Term Rental</option>
-                            <option>Long Term Rental</option>
-                            <option>Commercial Space</option>
-                            <option>Purchase/Investment</option>
-                        </select>
+                        <label class="block text-sm font-bold mb-2">Specific Requirements or Amenities</label>
+                        <textarea name="Requirements" maxlength="1500" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500" rows="3" placeholder="Tell us about your budget, bedrooms required, etc..."></textarea>
                     </div>
-                </div>
-                <div class="mb-6">
-                    <label class="block text-sm font-bold mb-2">Specific Requirements or Amenities</label>
-                    <textarea class="w-full border p-2 rounded" rows="3" placeholder="Tell us about your budget, bedrooms required, etc..."></textarea>
-                </div>
-                <button type="button" class="w-full bg-blue-900 text-white font-bold py-3 rounded hover:bg-blue-800 transition">Submit Property Search</button>
-            </form>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Don't see what you're looking for? Send us a message</label>
+                        <textarea name="Message" maxlength="2000" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500" rows="4" placeholder="If the property or area you want is not listed, describe it here (location, size, move-in date, anything else) and we'll search for you."></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Full Name</label>
+                            <input type="text" name="Name" required minlength="2" maxlength="80" autocomplete="name" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Cell Phone</label>
+                            <input type="tel" name="Phone" required inputmode="tel" autocomplete="tel" placeholder="(787) 555-1234" class="js-phone w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <p class="js-phone-error text-sm text-red-600 mt-1 hidden"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Email Address</label>
+                        <input type="email" name="email" required autocomplete="email" placeholder="name@example.com" class="js-email w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                        <p class="js-email-error text-sm text-red-600 mt-1 hidden"></p>
+                    </div>
+
+                    <!-- Contact consent (required) -->
+                    <label class="flex items-start gap-3 text-sm text-gray-600 cursor-pointer">
+                        <input type="checkbox" name="Consent" value="Yes - agreed to be contacted by phone, text, WhatsApp or email" required class="mt-1 h-4 w-4 flex-shrink-0">
+                        <span>I agree to be contacted by FS Property Solutions by phone call, text message (SMS), WhatsApp or email about my request. Message and data rates may apply. I can opt out at any time by replying STOP or emailing <a href="mailto:francis@fspropertypr.com" class="text-blue-600 underline">francis@fspropertypr.com</a>.</span>
+                    </label>
+                    <p class="js-consent-error text-sm text-red-600 hidden">Please check the box to agree to be contacted so we can respond to your request.</p>
+
+                    <!-- hCaptcha human check (free with Web3Forms, no setup needed) -->
+                    <div class="flex justify-center">
+                        <div class="h-captcha" data-captcha="true"></div>
+                    </div>
+                    <p class="js-captcha-error text-sm text-red-600 text-center hidden">Please complete the "I am human" check above.</p>
+
+                    <button type="submit" class="js-submit w-full bg-blue-900 text-white font-bold py-3 rounded hover:bg-blue-800 transition disabled:opacity-60 disabled:cursor-not-allowed">Submit Property Search</button>
+                    <div class="js-status hidden text-sm text-center p-3 rounded" role="status" aria-live="polite"></div>
+                </form>
         </div>
     </section>
 
@@ -407,20 +451,21 @@
             <div class="bg-white rounded-xl shadow-xl p-8">
                 <h2 class="text-3xl font-bold text-blue-900 text-center mb-8">Request Our Services</h2>
                 
-                <!-- Action set to mailto/form processor -->
-                <form action="https://formsubmit.co/francis@fspropertypr.com" method="POST" class="space-y-6">
-                    
-                    <!-- Anti-Spam Honeypot Field -->
-                    <input type="text" name="_honey" style="display:none">
-                    
-                    <!-- Hidden field to specify subject -->
-                    <input type="hidden" name="_subject" value="New Service Request from FS Property PR">
+                <!-- Form processor: Web3Forms (https://web3forms.com) -->
+                <form id="service-form" action="https://api.web3forms.com/submit" method="POST" class="w3f-form space-y-6" novalidate>
 
-                    <!-- Send visitors to our Thank You page after submitting (must be the full live web address) -->
-                    <input type="hidden" name="_next" value="https://fspropertypr.com/thank-you.html">
+                    <!-- Web3Forms access key (safe to be public) -->
+                    <input type="hidden" name="access_key" value="a1621e12-77e3-4dc6-aaae-b827f58d0459">
 
-                    <!-- Format the notification email as a clean table -->
-                    <input type="hidden" name="_template" value="table">
+                    <!-- Email subject and sender name for the notification -->
+                    <input type="hidden" name="subject" value="New Service Request from FS Property PR">
+                    <input type="hidden" name="from_name" value="FS Property PR Website">
+
+                    <!-- Thank You page (used if JavaScript is off; must be the full live web address) -->
+                    <input type="hidden" name="redirect" value="https://fspropertypr.com/thank-you.html">
+
+                    <!-- Anti-Spam Honeypot Field (bots tick it, people never see it) -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
 
                     <!-- Profile Type Options -->
                     <div class="flex justify-center space-x-6 mb-6">
@@ -441,22 +486,24 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">First Name</label>
-                            <input type="text" name="First Name" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <input type="text" name="First Name" required minlength="2" maxlength="50" autocomplete="given-name" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Last Name</label>
-                            <input type="text" name="Last Name" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <input type="text" name="Last Name" required minlength="2" maxlength="50" autocomplete="family-name" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Cell Phone</label>
-                            <input type="tel" name="Phone" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <input type="tel" name="Phone" required inputmode="tel" autocomplete="tel" placeholder="(787) 555-1234" class="js-phone w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <p class="js-phone-error text-sm text-red-600 mt-1 hidden"></p>
                         </div>
                         <div>
                             <label class="block text-sm font-bold text-gray-700 mb-2">Email Address</label>
-                            <input type="email" name="Email" required class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <input type="email" name="email" required autocomplete="email" placeholder="name@example.com" class="js-email w-full border border-gray-300 p-3 rounded focus:outline-none focus:border-blue-500">
+                            <p class="js-email-error text-sm text-red-600 mt-1 hidden"></p>
                         </div>
                     </div>
 
@@ -473,10 +520,24 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded shadow-lg hover:bg-blue-700 transition duration-300 text-lg">
+                    <!-- Contact consent (required) -->
+                    <label class="flex items-start gap-3 text-sm text-gray-600 cursor-pointer">
+                        <input type="checkbox" name="Consent" value="Yes - agreed to be contacted by phone, text, WhatsApp or email" required class="mt-1 h-4 w-4 flex-shrink-0">
+                        <span>I agree to be contacted by FS Property Solutions by phone call, text message (SMS), WhatsApp or email about my request. Message and data rates may apply. I can opt out at any time by replying STOP or emailing <a href="mailto:francis@fspropertypr.com" class="text-blue-600 underline">francis@fspropertypr.com</a>.</span>
+                    </label>
+                    <p class="js-consent-error text-sm text-red-600 hidden">Please check the box to agree to be contacted so we can respond to your request.</p>
+
+                    <!-- hCaptcha human check (free with Web3Forms, no setup needed) -->
+                    <div class="flex justify-center">
+                        <div class="h-captcha" data-captcha="true"></div>
+                    </div>
+                    <p class="js-captcha-error text-sm text-red-600 text-center hidden">Please complete the "I am human" check above.</p>
+
+                    <button type="submit" class="js-submit w-full bg-blue-600 text-white font-bold py-4 rounded shadow-lg hover:bg-blue-700 transition duration-300 text-lg disabled:opacity-60 disabled:cursor-not-allowed">
                         Submit Request
                     </button>
-                    <p class="text-xs text-gray-400 text-center mt-2">Protected by standard anti-spam measures.</p>
+                    <div class="js-status hidden text-sm text-center p-3 rounded" role="status" aria-live="polite"></div>
+                    <p class="text-xs text-gray-400 text-center mt-2">Protected by hCaptcha and anti-spam measures.</p>
                 </form>
 
                 <!-- Backup contact options (in case the form service is unavailable) -->
@@ -539,6 +600,120 @@
                 }
             });
         });
+    </script>
+
+    <!-- Web3Forms hCaptcha loader -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <!-- Web3Forms forms (Service Request + Property Search): validation + submission -->
+    <script>
+    (function () {
+        const THANK_YOU = 'https://fspropertypr.com/thank-you.html';
+        const BACKUP = 'Please email <a class="underline font-semibold" href="mailto:francis@fspropertypr.com?subject=Request%20-%20FS%20Property%20PR">francis@fspropertypr.com</a> ' +
+                       'or message us on <a class="underline font-semibold" href="https://wa.me/13054973952" target="_blank" rel="noopener">WhatsApp</a>.';
+
+        // ---- Phone: US / Puerto Rico (NANP) 10 digits, or international with "+" ----
+        function checkPhone(raw) {
+            const v = raw.trim();
+            if (!v) return { ok: false, msg: 'Please enter your cell phone number.' };
+            if (/[^\d\s().+\-]/.test(v)) return { ok: false, msg: 'Phone numbers can only contain digits, spaces, ( ) - and +.' };
+            let d = v.replace(/\D/g, '');
+            const intl = v.startsWith('+') && !v.startsWith('+1');
+            if (intl) {
+                if (d.length < 8 || d.length > 15) return { ok: false, msg: 'Please enter a valid international number (with country code).' };
+                if (/^(\d)\1+$/.test(d)) return { ok: false, msg: 'That phone number does not look real.' };
+                return { ok: true, value: '+' + d };
+            }
+            if (d.length === 11 && d[0] === '1') d = d.slice(1);
+            if (d.length !== 10) return { ok: false, msg: 'Please enter a 10-digit number, e.g. (787) 555-1234.' };
+            const area = d.slice(0, 3), exch = d.slice(3, 6), line = d.slice(6);
+            if (!/^[2-9]/.test(area) || !/^[2-9]/.test(exch)) return { ok: false, msg: 'That area code or number is not valid.' };
+            if (/^[2-9]11$/.test(area) || /^[2-9]11$/.test(exch)) return { ok: false, msg: 'That area code or number is not valid.' };
+            if (exch === '555' && /^01\d\d$/.test(line)) return { ok: false, msg: 'Please use a real phone number (555-01xx numbers are fictional).' };
+            if (/^(\d)\1{9}$/.test(d) || d === '1234567890' || d === '0123456789') return { ok: false, msg: 'That phone number does not look real.' };
+            return { ok: true, value: '+1 (' + area + ') ' + exch + '-' + line };
+        }
+
+        // ---- Email: strict format + common typo suggestions + throwaway-domain block ----
+        const TYPOS = {
+            'gmial.com':'gmail.com','gmal.com':'gmail.com','gmai.com':'gmail.com','gamil.com':'gmail.com','gnail.com':'gmail.com','gmail.co':'gmail.com','gmail.con':'gmail.com','gmail.cm':'gmail.com',
+            'hotmial.com':'hotmail.com','hotmal.com':'hotmail.com','hotmail.co':'hotmail.com','hotmail.con':'hotmail.com','hotmai.com':'hotmail.com',
+            'yaho.com':'yahoo.com','yahooo.com':'yahoo.com','yahoo.co':'yahoo.com','yahoo.con':'yahoo.com',
+            'outlok.com':'outlook.com','outloo.com':'outlook.com','outlook.co':'outlook.com','outlook.con':'outlook.com',
+            'icloud.co':'icloud.com','iclod.com':'icloud.com','icoud.com':'icloud.com'
+        };
+        const DISPOSABLE = ['mailinator.com','guerrillamail.com','10minutemail.com','tempmail.com','temp-mail.org','yopmail.com','trashmail.com','sharklasers.com','getnada.com','dispostable.com','throwawaymail.com','maildrop.cc','fakeinbox.com'];
+        function checkEmail(raw) {
+            const v = raw.trim().toLowerCase();
+            if (!v) return { ok: false, msg: 'Please enter your email address.' };
+            const re = /^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)*\.[a-z]{2,}$/;
+            if (!re.test(v) || v.includes('..') || v.length > 254) return { ok: false, msg: 'Please enter a valid email address, e.g. name@example.com.' };
+            const domain = v.split('@')[1];
+            if (TYPOS[domain]) return { ok: false, msg: 'Did you mean ' + v.split('@')[0] + '@' + TYPOS[domain] + '?' };
+            if (DISPOSABLE.includes(domain)) return { ok: false, msg: 'Please use a permanent email address so we can reach you.' };
+            return { ok: true, value: v };
+        }
+
+        function showError(input, errEl, msg) {
+            if (!input || !errEl) return;
+            errEl.textContent = msg || '';
+            errEl.classList.toggle('hidden', !msg);
+            input.classList.toggle('border-red-500', !!msg);
+            if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+        }
+
+        document.querySelectorAll('form.w3f-form').forEach((form) => {
+            const $ = (sel) => form.querySelector(sel);
+            const phoneEl = $('.js-phone'), emailEl = $('.js-email');
+            const phoneErr = $('.js-phone-error'), emailErr = $('.js-email-error');
+            const consentEl = $('input[name="Consent"]'), consentErr = $('.js-consent-error');
+            const captchaErr = $('.js-captcha-error');
+            const btn = $('.js-submit'), statusEl = $('.js-status');
+            const btnLabel = btn.textContent.trim();
+
+            phoneEl.addEventListener('blur', () => { if (phoneEl.value) { const r = checkPhone(phoneEl.value); showError(phoneEl, phoneErr, r.ok ? '' : r.msg); if (r.ok) phoneEl.value = r.value; } });
+            emailEl.addEventListener('blur', () => { if (emailEl.value) { const r = checkEmail(emailEl.value); showError(emailEl, emailErr, r.ok ? '' : r.msg); } });
+            phoneEl.addEventListener('input', () => showError(phoneEl, phoneErr, ''));
+            emailEl.addEventListener('input', () => showError(emailEl, emailErr, ''));
+            consentEl.addEventListener('change', () => consentErr.classList.toggle('hidden', consentEl.checked));
+
+            function setStatus(type, html) {
+                statusEl.className = 'js-status text-sm text-center p-3 rounded ' + (type === 'error' ? 'bg-red-50 text-red-700' : 'bg-blue-50 text-blue-800');
+                statusEl.innerHTML = html;
+            }
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const p = checkPhone(phoneEl.value), m = checkEmail(emailEl.value);
+                showError(phoneEl, phoneErr, p.ok ? '' : p.msg);
+                showError(emailEl, emailErr, m.ok ? '' : m.msg);
+                consentErr.classList.toggle('hidden', consentEl.checked);
+                if (!form.checkValidity() || !p.ok || !m.ok) {
+                    const first = !p.ok ? phoneEl : !m.ok ? emailEl : form.querySelector(':invalid');
+                    if (first === consentEl) consentEl.focus(); else { form.reportValidity(); first && first.focus(); }
+                    return;
+                }
+                phoneEl.value = p.value; emailEl.value = m.value;
+
+                const data = new FormData(form);
+                if (window.hcaptcha && form.querySelector('.h-captcha iframe') && !data.get('h-captcha-response')) { captchaErr.classList.remove('hidden'); return; }
+                captchaErr.classList.add('hidden');
+
+                btn.disabled = true; btn.textContent = 'Sending...';
+                setStatus('info', 'Sending your request...');
+                try {
+                    const res = await fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: data });
+                    const json = await res.json().catch(() => ({}));
+                    if (res.ok && json.success) { window.location.href = THANK_YOU; return; }
+                    throw new Error(json.message || ('Error ' + res.status));
+                } catch (err) {
+                    setStatus('error', 'Sorry, we could not send your request right now (' + String(err.message).replace(/[<>&]/g, '') + '). ' + BACKUP);
+                    btn.disabled = false; btn.textContent = btnLabel;
+                    if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (_) {} }
+                }
+            });
+        });
+    })();
     </script>
 </body>
 </html>
