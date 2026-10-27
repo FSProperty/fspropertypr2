@@ -10,6 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html { scroll-behavior: smooth; }
+        .hero-banner { padding-bottom: 48px; }
+        .past-jobs-link {
+            position: absolute; left: 16.3%; bottom: 4px; transform: translateX(-50%);
+            display: inline-flex; align-items: center; justify-content: center;
+            min-height: 44px; padding: 0 10px; border-radius: 6px;
+            background: #1e3a8a; color: #fff; font-size: clamp(11px, 1.1vw, 16px);
+            font-weight: 700; white-space: nowrap; text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .past-jobs-link:hover { background: #2563eb; }
+        .past-jobs-link:focus-visible { outline: 3px solid #2563eb; outline-offset: 3px; }
+        #past-job-photos { scroll-margin-top: 100px; }
         /* Hero banner logo: see-through glass circle with a glowing blue rim */
         .hero-logo-circle {
             position: absolute; left: 50%; top: 5.5%; transform: translateX(-50%);
@@ -85,12 +97,13 @@
     </nav>
 
     <!-- Hero Banner with Logo Overlay -->
-    <header class="relative w-full bg-white">
+    <header class="hero-banner relative w-full bg-white">
         <img src="FSpropertypr Hero Banner.jpg" alt="FS Property PR services: Pressure &amp; Soft Washing, Property Management, Risk Management, Cleaning Services, Maintenance &amp; Repairs" class="w-full h-auto block">
         <!-- Logo on top of banner, inside a frosted-glass circle -->
         <div class="hero-logo-circle">
             <img src="FSpropertypr Logo Transparent.png" alt="FS Property PR Logo">
         </div>
+        <a href="#past-job-photos" class="past-jobs-link">Past Job Photos</a>
     </header>
 
     <!-- Hero Message & Offers -->
@@ -106,6 +119,36 @@
                 <div class="bg-green-600 text-white font-bold py-2 px-6 rounded-full shadow flex items-center justify-center">
                     <i class="fas fa-house-damage mr-2"></i> FEMA Friendly Nightly Rates
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Past pressure washing jobs -->
+    <section id="past-job-photos" aria-labelledby="past-job-photos-title" class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 id="past-job-photos-title" class="text-3xl font-bold text-blue-900 mb-4">Past Job Photos</h2>
+                <p class="text-gray-600">See the difference from our pressure washing work. Select a photo to view it full size.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <figure class="bg-white rounded-xl shadow overflow-hidden">
+                    <a href="images/past-jobs-pressure-wash/driveway-before-after.jpg" target="_blank" rel="noopener" class="block focus-visible:outline focus-visible:outline-4 focus-visible:outline-blue-600" aria-label="View driveway before and after photo full size (opens in a new tab)">
+                        <img src="images/past-jobs-pressure-wash/driveway-before-after.jpg" alt="Driveway before and after pressure washing" loading="lazy" decoding="async" class="w-full h-auto">
+                    </a>
+                    <figcaption class="p-5 font-semibold text-blue-900">Driveway <span class="block text-sm font-normal text-gray-600 mt-1">Before &amp; After</span></figcaption>
+                </figure>
+                <figure class="bg-white rounded-xl shadow overflow-hidden">
+                    <a href="images/past-jobs-pressure-wash/pavers-fountain-before-after.jpg" target="_blank" rel="noopener" class="block focus-visible:outline focus-visible:outline-4 focus-visible:outline-blue-600" aria-label="View pavers and fountain before and after photo full size (opens in a new tab)">
+                        <img src="images/past-jobs-pressure-wash/pavers-fountain-before-after.jpg" alt="Pavers and Fountain before and after pressure washing" loading="lazy" decoding="async" class="w-full h-auto">
+                    </a>
+                    <figcaption class="p-5 font-semibold text-blue-900">Pavers and Fountain <span class="block text-sm font-normal text-gray-600 mt-1">Before &amp; After</span></figcaption>
+                </figure>
+                <figure class="bg-white rounded-xl shadow overflow-hidden">
+                    <a href="images/past-jobs-pressure-wash/paver-path-before-after.jpg" target="_blank" rel="noopener" class="block focus-visible:outline focus-visible:outline-4 focus-visible:outline-blue-600" aria-label="View paver path before and after photo full size (opens in a new tab)">
+                        <img src="images/past-jobs-pressure-wash/paver-path-before-after.jpg" alt="Paver Path before and after pressure washing" loading="lazy" decoding="async" class="w-full h-auto">
+                    </a>
+                    <figcaption class="p-5 font-semibold text-blue-900">Paver Path <span class="block text-sm font-normal text-gray-600 mt-1">Before &amp; After</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
